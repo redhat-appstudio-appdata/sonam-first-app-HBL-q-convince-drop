@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-go-basic-nioa
+  namespace: somahesh-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:ffd29132095a8c1afc64923b721eb8046eec7083a7534fa5f217d88bca4f94ec
+        name: my-go
+        resources: {}
+status: {}
