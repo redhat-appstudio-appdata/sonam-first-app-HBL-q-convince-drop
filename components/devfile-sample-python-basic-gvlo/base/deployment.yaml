@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-python-basic-gvlo
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:HBL-q-devfile-sample-python-basic-gvlo
+      - image: quay.io/redhat-appstudio/user-workload@sha256:431d930d2f0adba31e797317a5596130d34658ae5cfbd956631a3c1572fa38a9
         name: my-python
         ports:
         - containerPort: 8081
