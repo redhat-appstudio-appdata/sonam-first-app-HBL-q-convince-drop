@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-python-basic-g01k
+  namespace: somahesh-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:c5308c95c93388345d65c23b6a7a314a34b101094e744840f7ae74438c1119a5
+        name: my-python
+        resources: {}
+status: {}
