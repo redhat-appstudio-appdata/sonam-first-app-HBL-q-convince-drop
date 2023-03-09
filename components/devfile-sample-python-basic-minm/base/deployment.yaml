@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-python-basic-minm
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-python-basic-minm
+    app.kubernetes.io/part-of: sonam-first-app
+  name: devfile-sample-python-basic-minm
+  namespace: somahesh-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: devfile-sample-python-basic-minm
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: devfile-sample-python-basic-minm
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:HBL-q-devfile-sample-python-basic-minm
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
